@@ -310,8 +310,7 @@ func (s *Statsd) Gather(acc telegraf.Accumulator) error {
 				fields[name] = stats.Percentile(percentile.Value)
 			}
 		}
-
-		acc.AddFields(m.name, fields, m.tags, now)
+		acc.AddHistogram(m.name, fields, m.tags, now)
 	}
 	if s.DeleteTimings {
 		s.timings = make(map[string]cachedtimings)
