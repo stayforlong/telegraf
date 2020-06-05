@@ -43,6 +43,7 @@ type Metric struct {
 	Points [1]Point `json:"points"`
 	Host   string   `json:"host"`
 	Tags   []string `json:"tags,omitempty"`
+	Type   string   `json:"type"`
 }
 
 type Point [2]float64
@@ -91,6 +92,13 @@ func (d *Datadog) Write(metrics []telegraf.Metric) error {
 					Tags:   metricTags,
 					Host:   host,
 				}
+				switch m.Type() {
+				case telegraf.Counter, telegraf.Histogram:
+					metric.Type = "count"
+				case telegraf.Gauge:
+					metric.Type = "gauge"
+				}
+
 				metric.Points[0] = dogM
 				tempSeries = append(tempSeries, metric)
 				metricCounter++
