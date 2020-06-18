@@ -93,9 +93,9 @@ func (d *Datadog) Write(metrics []telegraf.Metric) error {
 					Host:   host,
 				}
 				switch m.Type() {
-				case telegraf.Counter, telegraf.Histogram:
+				case telegraf.Counter:
 					metric.Type = "count"
-				case telegraf.Gauge:
+				case telegraf.Gauge, telegraf.Histogram:
 					metric.Type = "gauge"
 				}
 
