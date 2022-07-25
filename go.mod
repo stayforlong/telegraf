@@ -68,7 +68,7 @@ require (
 	github.com/golang/geo v0.0.0-20190916061304-5b978397cfec
 	github.com/golang/protobuf v1.3.5
 	github.com/golang/snappy v0.0.1
-	github.com/google/go-cmp v0.5.4
+	github.com/google/go-cmp v0.5.8
 	github.com/google/go-github/v32 v32.1.0
 	github.com/gopcua/opcua v0.1.13
 	github.com/gorilla/mux v1.6.2
@@ -115,7 +115,7 @@ require (
 	github.com/prometheus/client_golang v1.5.1
 	github.com/prometheus/client_model v0.2.0
 	github.com/prometheus/common v0.9.1
-	github.com/prometheus/procfs v0.0.8
+	github.com/prometheus/procfs v0.8.0
 	github.com/prometheus/prometheus v2.5.0+incompatible
 	github.com/riemann/riemann-go-client v0.5.0
 	github.com/safchain/ethtool v0.0.0-20200218184317-f459e2d13664
@@ -144,8 +144,8 @@ require (
 	golang.org/x/lint v0.0.0-20200302205851-738671d3881b // indirect
 	golang.org/x/net v0.0.0-20200904194848-62affa334b73
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
-	golang.org/x/sync v0.0.0-20200317015054-43a5402ce75a
-	golang.org/x/sys v0.0.0-20200826173525-f9321e4c35a6
+	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f
+	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a
 	golang.org/x/text v0.3.3
 	golang.org/x/tools v0.0.0-20200317043434-63da46f3035e // indirect
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20200205215550-e35592f146e4
