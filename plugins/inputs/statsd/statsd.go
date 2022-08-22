@@ -32,7 +32,7 @@ const (
 	defaultSeparator           = "_"
 	defaultAllowPendingMessage = 10000
 
-	parserGoRoutines = 7
+	parserGoRoutines = 5
 )
 
 // Statsd allows the importing of statsd and dogstatsd data.
