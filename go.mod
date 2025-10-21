@@ -25,6 +25,7 @@ require (
 	github.com/BurntSushi/toml v1.5.0
 	github.com/ClickHouse/clickhouse-go/v2 v2.40.1
 	github.com/DATA-DOG/go-sqlmock v1.5.2
+	github.com/DataDog/dd-trace-go/v2 v2.3.0
 	github.com/IBM/nzgo/v12 v12.0.10
 	github.com/IBM/sarama v1.45.2
 	github.com/Masterminds/semver/v3 v3.4.0
@@ -196,7 +197,7 @@ require (
 	github.com/snowflakedb/gosnowflake v1.16.0
 	github.com/srebhan/cborquery v1.0.4
 	github.com/srebhan/protobufquery v1.0.4
-	github.com/stretchr/testify v1.10.0
+	github.com/stretchr/testify v1.11.1
 	github.com/tbrandon/mbserver v0.0.0-20170611213546-993e1772cc62
 	github.com/tdrn-org/go-hue v0.3.0
 	github.com/testcontainers/testcontainers-go v0.38.0
@@ -217,7 +218,7 @@ require (
 	github.com/xdg/scram v1.0.5
 	github.com/yuin/goldmark v1.7.13
 	go.mongodb.org/mongo-driver v1.17.4
-	go.opentelemetry.io/collector/pdata v1.39.0
+	go.opentelemetry.io/collector/pdata v1.44.0
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc v0.44.0
 	go.opentelemetry.io/otel/sdk/metric v1.37.0
 	go.opentelemetry.io/proto/otlp v1.7.0
@@ -236,8 +237,8 @@ require (
 	gonum.org/v1/gonum v0.16.0
 	google.golang.org/api v0.248.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20250818200422-3122310a409c
-	google.golang.org/grpc v1.75.0
-	google.golang.org/protobuf v1.36.8
+	google.golang.org/grpc v1.76.0
+	google.golang.org/protobuf v1.36.10
 	gopkg.in/gorethink/gorethink.v3 v3.0.5
 	gopkg.in/olivere/elastic.v5 v5.0.86
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7
@@ -248,6 +249,18 @@ require (
 	layeh.com/radius v0.0.0-20221205141417-e7fbddd11d68
 	modernc.org/sqlite v1.38.2
 	software.sslmate.com/src/go-pkcs12 v0.6.0
+)
+
+require (
+	github.com/DataDog/datadog-agent/pkg/trace v0.67.0 // indirect
+	github.com/DataDog/datadog-go/v5 v5.6.0 // indirect
+	github.com/DataDog/gostackparse v0.7.0 // indirect
+	github.com/google/pprof v0.0.0-20250317173921-a4b03ec1a45e // indirect
+	github.com/puzpuzpuz/xsync/v3 v3.5.1 // indirect
+	github.com/richardartoul/molecule v1.0.1-0.20240531184615-7ca0df43c0b3 // indirect
+	github.com/spaolacci/murmur3 v1.1.0 // indirect
+	go.opentelemetry.io/collector/consumer/consumererror v0.138.0 // indirect
+	go.opentelemetry.io/collector/pdata/pprofile v0.138.0 // indirect
 )
 
 require (
@@ -357,7 +370,7 @@ require (
 	github.com/go-faster/city v1.0.1 // indirect
 	github.com/go-faster/errors v0.7.1 // indirect
 	github.com/go-git/go-billy/v5 v5.6.0 // indirect
-	github.com/go-jose/go-jose/v4 v4.1.1 // indirect
+	github.com/go-jose/go-jose/v4 v4.1.2 // indirect
 	github.com/go-logr/logr v1.4.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-openapi/jsonpointer v0.21.0 // indirect
@@ -425,7 +438,7 @@ require (
 	github.com/kylelemons/godebug v1.1.0 // indirect
 	github.com/leodido/ragel-machinery v0.0.0-20190525184631-5f46317e436b // indirect
 	github.com/likexian/gokit v0.25.15 // indirect
-	github.com/lufia/plan9stats v0.0.0-20240226150601-1dcf7310316a // indirect
+	github.com/lufia/plan9stats v0.0.0-20240909124753-873cd0166683 // indirect
 	github.com/magiconair/properties v1.8.10 // indirect
 	github.com/mailru/easyjson v0.9.0 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
@@ -537,9 +550,8 @@ require (
 	go.etcd.io/etcd/api/v3 v3.5.4 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
-	go.opentelemetry.io/collector/consumer v0.101.0 // indirect
-	go.opentelemetry.io/collector/featuregate v1.39.0 // indirect
-	go.opentelemetry.io/collector/semconv v0.105.0 // indirect
+	go.opentelemetry.io/collector/featuregate v1.44.0 // indirect
+	go.opentelemetry.io/collector/semconv v0.125.0 // indirect
 	go.opentelemetry.io/contrib/detectors/gcp v1.36.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.61.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.61.0 // indirect

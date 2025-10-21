@@ -8,6 +8,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/DataDog/dd-trace-go/v2/profiler"
 	"github.com/awnumar/memguard"
 	"github.com/urfave/cli/v2"
 
@@ -426,6 +427,11 @@ func runApp(args []string, outputBuffer io.Writer, pprof Server, c TelegrafConfi
 func main() {
 	// #13481: disables gh:99designs/keyring kwallet.go from connecting to dbus
 	os.Setenv("DISABLE_KWALLET", "1")
+
+	_ = profiler.Start(profiler.WithService("telegraf-metrics-aggregator"),
+		profiler.WithVersion(internal.Version),
+		profiler.WithProfileTypes(profiler.CPUProfile, profiler.HeapProfile, profiler.MutexProfile, profiler.GoroutineProfile, profiler.BlockProfile),
+	)
 
 	agent := Telegraf{}
 	pprof := NewPprofServer()
