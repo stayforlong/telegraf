@@ -222,6 +222,67 @@ cpu_time_idle{host="example.org"} 42
 cpu_time_idle{host="example.org"} 42
 `),
 		},
+		{
+			name: "statsd timing fields dropped without type override",
+			metric: metric.New(
+				"statsd_timing",
+				map[string]string{},
+				map[string]interface{}{
+					"max":          100.0,
+					"min":          100.0,
+					"avg":          100.0,
+					"count":        1.0,
+					"95percentile": 100.0,
+				},
+				time.Unix(0, 0),
+				telegraf.Histogram,
+			),
+			expected: []byte(``),
+		},
+		{
+			name: "statsd timing fields resolved via gauge override",
+			config: FormatConfig{
+				TypeMappings: MetricTypes{
+					Gauge: []string{
+						"statsd_timing_max",
+						"statsd_timing_min",
+						"statsd_timing_avg",
+						"statsd_timing_count",
+						"statsd_timing_95percentile",
+					},
+				},
+			},
+			metric: metric.New(
+				"statsd_timing",
+				map[string]string{},
+				map[string]interface{}{
+					"max":          100.0,
+					"min":          100.0,
+					"avg":          100.0,
+					"count":        1.0,
+					"95percentile": 100.0,
+				},
+				time.Unix(0, 0),
+				telegraf.Histogram,
+			),
+			expected: []byte(`
+# HELP statsd_timing_95percentile Telegraf collected metric
+# TYPE statsd_timing_95percentile gauge
+statsd_timing_95percentile 100
+# HELP statsd_timing_avg Telegraf collected metric
+# TYPE statsd_timing_avg gauge
+statsd_timing_avg 100
+# HELP statsd_timing_count Telegraf collected metric
+# TYPE statsd_timing_count gauge
+statsd_timing_count 1
+# HELP statsd_timing_max Telegraf collected metric
+# TYPE statsd_timing_max gauge
+statsd_timing_max 100
+# HELP statsd_timing_min Telegraf collected metric
+# TYPE statsd_timing_min gauge
+statsd_timing_min 100
+`),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

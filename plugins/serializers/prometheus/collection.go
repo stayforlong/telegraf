@@ -225,7 +225,7 @@ func (c *Collection) Add(m telegraf.Metric, now time.Time) {
 			}
 		}
 
-		switch m.Type() {
+		switch metricType {
 		case telegraf.Counter:
 			fallthrough
 		case telegraf.Gauge:
